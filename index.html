@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clima Ahora</title>
+    <meta
+      name="description"
+      content="Aplicación web del clima con búsqueda de ciudades, modo claro y oscuro, y datos en tiempo real."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-orb orb-1"></div>
+    <div class="background-orb orb-2"></div>
+
+    <main class="app-shell">
+      <section class="weather-card" aria-labelledby="app-title">
+        <header class="card-header">
+          <div>
+            <p class="eyebrow">Weather</p>
+            <h1 id="app-title">Clima Ahora</h1>
+            <p class="subtitle">
+              Busca cualquier ciudad y consulta el clima actual al instante.
+            </p>
+          </div>
+
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Cambiar entre modo claro y oscuro"
+            title="Cambiar tema"
+          >
+            <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+          </button>
+        </header>
+
+        <form id="searchForm" class="search-panel" novalidate>
+          <label class="sr-only" for="cityInput">Buscar ciudad</label>
+          <div class="input-group">
+            <span class="input-icon" aria-hidden="true">📍</span>
+            <input
+              id="cityInput"
+              name="city"
+              type="text"
+              placeholder="Escribe una ciudad..."
+              autocomplete="off"
+              maxlength="80"
+            />
+          </div>
+
+          <div class="actions">
+            <button id="searchButton" class="btn btn-primary" type="submit">
+              Buscar
+            </button>
+            <button id="clearButton" class="btn btn-secondary" type="button">
+              Limpiar
+            </button>
+          </div>
+        </form>
+
+        <div class="feedback" aria-live="polite">
+          <p id="loadingMessage" class="status-message hidden">Consultando clima...</p>
+          <p id="errorMessage" class="status-message error-message hidden"></p>
+        </div>
+
+        <section id="weatherResult" class="weather-result hidden" aria-live="polite">
+          <div class="weather-main">
+            <div class="weather-copy">
+              <p class="city-label">Ubicación</p>
+              <h2 id="cityName">Ciudad</h2>
+              <p id="weatherDescription" class="weather-description">
+                Descripción del clima
+              </p>
+            </div>
+
+            <div class="weather-visual">
+              <img
+                id="weatherIcon"
+                class="weather-icon"
+                src=""
+                alt="Icono del clima"
+              />
+              <p id="temperature" class="temperature">0°C</p>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <article class="metric">
+              <span class="metric-icon" aria-hidden="true">🌡️</span>
+              <div>
+                <p class="metric-label">Sensación térmica</p>
+                <p id="realFeel" class="metric-value">0°C</p>
+              </div>
+            </article>
+
+            <article class="metric">
+              <span class="metric-icon" aria-hidden="true">💧</span>
+              <div>
+                <p class="metric-label">Humedad</p>
+                <p id="humidity" class="metric-value">0%</p>
+              </div>
+            </article>
+
+            <article class="metric">
+              <span class="metric-icon" aria-hidden="true">☁️</span>
+              <div>
+                <p class="metric-label">Estado</p>
+                <p id="weatherStatus" class="metric-value">Sin datos</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
