@@ -1,17 +1,19 @@
-# web-clima
+# Clima
 
-Aplicación web del clima construida con HTML, CSS y JavaScript puro. Permite buscar cualquier ciudad, consultar el clima actual en tiempo real y guardar la última búsqueda en el navegador.
+Una aplicación web del clima, moderna y responsive, construida con **HTML, CSS y JavaScript**. Permite buscar ciudades, consultar el clima actual en tiempo real y guardar la última búsqueda en el navegador. ☁️
+
+## Vista general
+
+`Clima` fue creada como una app ligera, visual y fácil de usar, sin frameworks ni dependencias externas.
 
 ## Características
 
 - Búsqueda de ciudades con validación de input.
 - Temperatura actual en grados Celsius.
-- Sensación térmica.
-- Humedad.
-- Descripción del clima.
-- Icono visual según la condición meteorológica.
-- Estado de carga y manejo de errores.
-- Modo claro y modo oscuro.
+- Sensación térmica y humedad.
+- Descripción del clima e icono visual.
+- Manejo de errores.
+- Modo claro y modo oscuro. 🌙
 - Persistencia de la última ciudad con `localStorage`.
 
 ## Tecnologías
